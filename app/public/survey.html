@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- font awesome icons -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <title>Friend FInder Survey</title>
+</head>
+<body>
+  <div class = "container">
+    <h2><strong>Questions!</strong></h2>
+    <hr>
+    <h3><strong>About You</strong></h3>
+    <div class = "input-group mb-3">
+      <div class = "input-group-prepend">
+        <span class = "input-group-text" id = "basic-addon1">Name (Required)</span>
+      </div>
+      <input type = "text" id = "name" class = "form-control" required>
+    </div>
+    <div class = "input-group mb-3">
+      <div class = "input-group-prepend">
+        <span class = "input-group-text" id = "basic-addon2">Link to Photo (Required)</span>
+      </div>
+      <input type = "text" id = "picture" class = "form-control" required>
+    </div>
+    <hr>
+    <h3><strong>Question 1</strong></h3>
+    <h4>How important is it that your friend is intelligent?</h4>
+    <select class="custom-select" id="question1">
+      <option selected>Choose...</option>
+      <option value="1">1 As long as he/she is fun to be around...</option>
+      <option value="2">2 Doesn't need to be the sharpest tool in the shed</option>
+      <option value="3">3 Average is fine</option>
+      <option value="4">4 Above average required</option>
+      <option value="5">5 Needs to be like Einstein</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 2</strong></h3>
+    <h4>How do you measure success?</h4>
+    <select class="custom-select" id="question2">
+      <option selected>Choose...</option>
+      <option value="1">1 Have a lot of friends</option>
+      <option value="2">2 Sometimes leave work a little early...</option>
+      <option value="3">3 Balance of work and play</option>
+      <option value="4">4 Work hard and play hard</option>
+      <option value="5">5 Workaholic with lots of money</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 3</strong></h3>
+    <h4>Do you consider yourself an introvert or an extrovert?</h4>
+    <select class="custom-select" id="question3">
+      <option selected>Choose...</option>
+      <option value="1">1 Wallflower</option>
+      <option value="2">2 Prefer own company</option>
+      <option value="3">3 Stay in, go out meh</option>
+      <option value="4">4 Prefer crowds</option>
+      <option value="5">5 Social butterfly</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 4</strong></h3>
+    <h4>How mindful are you?</h4>
+    <select class="custom-select" id="question4">
+      <option selected>Choose...</option>
+      <option value="1">1 YOLO</option>
+      <option value="2">2 Damn the torpedos! Full speed ahead!</option>
+      <option value="3">3 Happiness is moderation in all things</option>
+      <option value="4">4 Carefully weigh the consequences</option>
+      <option value="5">5 Always looking to the future</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 5</strong></h3>
+    <h4>Do you fix or replace something broken?</h4>
+    <select class="custom-select" id="question5">
+      <option selected>Choose...</option>
+      <option value="1">1 Two left thumbs</option>
+      <option value="2">2 Ow! Damn hammer!</option>
+      <option value="3">3 Will fix it, if it's not too much effort...</option>
+      <option value="4">4 Will fix it, if I can</option>
+      <option value="5">5 Mr. Fix-it</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 6</strong></h3>
+    <h4>How religious are you?</h4>
+    <select class="custom-select" id="question6">
+      <option selected>Choose...</option>
+      <option value="1">1 There is no God</option>
+      <option value="2">2 I'm a 'Creaster' (Chrmistmas and Easter)</option>
+      <option value="3">3 Go to church most weeks</option>
+      <option value="4">4 Spend some time praying most days</option>
+      <option value="5">5 I'm entering the seminary next week</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 7</strong></h3>
+    <h4>Are you liberal or conservative?</h4>
+    <select class="custom-select" id="question7">
+      <option selected>Choose...</option>
+      <option value="1">1 Nancy Pelosi is too far Right</option>
+      <option value="2">2 Huffington Post is a fine publication</option>
+      <option value="3">3 Both options make me retch!</option>
+      <option value="4">4 Fox and Friends makes some good points</option>
+      <option value="5">5 Rush Limbaugh is the man!</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 8</strong></h3>
+    <h4>How active are you?</h4>
+    <select class="custom-select" id="question8">
+      <option selected>Choose...</option>
+      <option value="1">1 Wouldn't get out of bed if I didn't have to pee!</option>
+      <option value="2">2 Couch potato</option>
+      <option value="3">3 Work out for an hour a day</option>
+      <option value="4">4 Gym rat</option>
+      <option value="5">5 Do four Ironman Triathlons a year!</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 9</strong></h3>
+    <h4>Do you hold a grudge?</h4>
+    <select class="custom-select" id="question9">
+      <option selected>Choose...</option>
+      <option value="1">1 Forgive and forget</option>
+      <option value="2">2 Forgive, but never forget</option>
+      <option value="3">3 Depends on what you did</option>
+      <option value="4">4 Sooner or later I'll get you</option>
+      <option value="5">5 Revenge is a dish best served cold</option>
+    </select>
+    <br><br>
+    <h3><strong>Question 10</strong></h3>
+    <h4>How spontaneous are you?</h4>
+    <select class="custom-select" id="question10">
+      <option selected>Choose...</option>
+      <option value="1">1 My vacation itinerary has every detail planned in 30 minute increments</option>
+      <option value="2">2 Without a plan there is only chaos</option>
+      <option value="3">3 Got to have some structure, but have to be flexible for the unexpected</option>
+      <option value="4">4 Once we get there the details will take care of themselves</option>
+      <option value="5">5 Let's go to the airport and get on the first plane that will take us!</option>
+    </select>
+    <br><br>
+    <button type = "submit" class = "btn btn-primary btn-lg btn-block" id = "submit"><i class="fa fa-check-circle"></i> Submit</button>
+    <hr>
+    <p>
+      <a href = "/api/friends">API Friends List</a>
+      <i class="fa fa-ellipsis-v" aria-hidden = "true"></i>
+      <a href = "https://github.com/bpzimmerman/Friend-Finder">GitHub Repo</a>
+    </p>
+  </div>
+</body>
+</html>
