@@ -34,7 +34,7 @@
       <div class = "input-group-prepend">
         <span class = "input-group-text" id = "basic-addon2">Link to Photo (Required)</span>
       </div>
-      <input type = "text" id = "picture" class = "form-control" required>
+      <input type = "text" id = "photo" class = "form-control" required>
     </div>
     <hr>
     <h3><strong>Question 1</strong></h3>
@@ -155,5 +155,121 @@
       <a href = "https://github.com/bpzimmerman/Friend-Finder">GitHub Repo</a>
     </p>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="bestMatchModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <!-- <div class="modal-dialog modal-lg" role="document"> -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="modal-label">Best Match</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-data">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
+          <button type="button" class="btn btn-primary" id="redo" data-dismiss="modal">Redo?</button>
+        </div>
+      </div>
+    </div>
+</div>
 </body>
+<script type = "text/javascript">
+  function getFriend(user){
+    // URL of the current page to give a reference point for the routing
+    var currentURL = window.location.origin;
+
+    // send the user's data to the friends api
+    $.post("/api/friends", user, function(data){
+
+      // display the data in the modal
+      // div to hold the data
+      var matchDiv = $("<div>");
+      matchDiv.attr("id", "bestMatch");
+      matchDiv.attr("class", "container")
+
+      // title for the name and match percent
+      var matchTitle = $("<h3>");
+      matchTitle.text(`${data.name} is a ${data.matchPercent} match!`);
+
+      // image for the match's picture
+      var matchImg = $("<img>");
+      matchImg.attr("src", data.photo);
+      matchImg.attr("alt", "best-match-image");
+      matchImg.attr("style", "max-width: 100%");
+
+      // build the final div and display it in the modal
+      matchDiv.append(matchTitle, matchImg);
+      $("#modal-data").append(matchDiv);
+      console.log(data);
+    });
+
+    // show the modal
+    $("#bestMatchModal").modal("show");
+  };
+
+  // submit button click
+  $("#submit").on("click", function(event){
+    event.preventDefault();
+
+    // function to check if each field is filled out
+    function quizComplete(){
+      var complete = true;
+
+      // looks at name and photo fields
+      $(".form-control").each(function(i, obj){
+        if ($(this).val() === ""){
+          complete = false;
+        };
+      });
+
+      // looks at the question select boxes
+      $(".custom-select").each(function(i, obj){
+        if ($(this).val() === "Choose..."){
+          complete = false;
+        };
+      });
+      return complete;
+    };
+
+    // checks to see if all the fields are filled out
+    if (quizComplete()){
+
+      // reads the select boxes and puts the values in an array
+      var scoreData = [];
+      $(".custom-select").each(function(i, obj){
+        scoreData.push($(this).val());
+      });
+
+      // creates an object out of the user data
+      var userData = {
+        'name': $("#name").val().trim(),
+        'photo': $("#photo").val().trim(),
+        'scores': scoreData
+      };
+
+      // calls the function to retrieve the best match
+      getFriend(userData);
+    } else {
+
+      // scrolls to the top of the page and sends an alert if there is at least one field not filled out
+      $("html, body").animate({ scrollTop: 0 }, "fast");
+      alert("You must fill out all the fields!");
+    };
+  });
+
+  // on click event for the redo button
+  $("#redo").on("click", function(event){
+    event.preventDefault();
+    
+    // clears old data, but keeps the name and photo link
+    $("#modal-data").empty();
+    $(".custom-select").each(function(i, obj){
+      $(this).val("Choose...");
+    });
+  });
+</script>
 </html>
