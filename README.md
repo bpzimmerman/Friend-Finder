@@ -1,5 +1,5 @@
 # Friend-Finder
-##(for entertainment only)
+(for entertainment only)
 
 ### Overview
 
