@@ -204,16 +204,11 @@
       // build the final div and display it in the modal
       matchDiv.append(matchTitle, matchImg);
       $("#modal-data").append(matchDiv);
-      console.log(data);
     });
 
     // show the modal
     $("#bestMatchModal").modal("show");
   };
-
-  // submit button click
-  $("#submit").on("click", function(event){
-    event.preventDefault();
 
     // function to check if each field is filled out
     function quizComplete(){
@@ -234,6 +229,10 @@
       });
       return complete;
     };
+
+  // submit button click
+  $("#submit").on("click", function(event){
+    event.preventDefault();
 
     // checks to see if all the fields are filled out
     if (quizComplete()){
@@ -270,6 +269,7 @@
     $(".custom-select").each(function(i, obj){
       $(this).val("Choose...");
     });
+    $("html, body").animate({ scrollTop: 0 }, "fast");
   });
 </script>
 </html>

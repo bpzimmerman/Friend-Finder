@@ -6,21 +6,20 @@ module.exports = function(app){
   // show the friends json
   app.get("/api/friends", function(req, res){
     res.json(friendData);
-    // res.sendFile(path.join(__dirname, "/friends.js"));
   });
   
   // responds with the best match
   app.post("/api/friends", function(req, res){
 
-    // assigns the user scores to an array
-    var userScores = req.body["scores[]"];
+    // assigns the user scores to its own array variable
+    var userScores = req.body.scores;
     var results = [];
 
-    // double for loop to go through the user scores and and each of the friends' scores and subtract the values at corresponding indices and push each calculated value to the results array
+    // double for loop to go through the user scores and and each of the friends' scores, subtract the values at corresponding indices, and push each calculated value to the results array
     for (var i in friendData){
       var diff = 0;
       for (var j in friendData[i].scores){
-        diff += Math.abs(userScores[j] - friendData[i].scores[j])
+        diff += Math.abs(parseFloat(userScores[j]) - parseFloat(friendData[i].scores[j]))
       };
       results.push(diff);
     };
