@@ -9,7 +9,7 @@ This application will take in the user's answers to a short, 10-question quiz, c
 
 1. The application is located as follows:
 
-* Heroku deployment: [Friend Finder App](https://polar-waters-32949.herokuapp.com/)
+* Heroku deployment: [Friend Finder App](https://finding-friends-ftw.herokuapp.com/)
 
 * GitHub repository: [Friend Finder GitHub Repository](https://github.com/bpzimmerman/Friend-Finder)
 
