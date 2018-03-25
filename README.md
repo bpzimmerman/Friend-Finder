@@ -9,9 +9,9 @@ This application will take in the user's answers to a short, 10-question quiz, c
 
 1. The application is located as follows:
 
-* Heroku deployment: [Friend Finder App](https://finding-friends-ftw.herokuapp.com/)
+   * Heroku deployment: [Friend Finder App](https://finding-friends-ftw.herokuapp.com/)
 
-* GitHub repository: [Friend Finder GitHub Repository](https://github.com/bpzimmerman/Friend-Finder)
+   * GitHub repository: [Friend Finder GitHub Repository](https://github.com/bpzimmerman/Friend-Finder)
 
 2. The Home page contains a link to the quiz, a link to the GitHub repository, and a link the will display a JSON formated object showing all the current friends.
 
