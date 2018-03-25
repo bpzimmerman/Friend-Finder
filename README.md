@@ -3,7 +3,7 @@
 
 ### Overview
 
-This application will take in the user's answers to a short, 10-question quiz, complare them to the current "friends", and will return the best match (the "friend" with the least cumulative difference between the individual answers).
+This application will take in the user's answers to a short, 10-question quiz, compare them to the current "friends", and will return the best match (the "friend" with the least cumulative difference between the individual answers).
 
 ### Instructions
 
@@ -19,4 +19,4 @@ This application will take in the user's answers to a short, 10-question quiz, c
 
 4. Once the quiz has been completely filled out, click `Submit` and the application will return the best match of the current friends.
 
-5. Selecting `Done` in the modal will simply close the modal. Selecting `Redo?` in the modal will clear out the answers (leaving the name and photo information) and scroll back to the top of the page to allow you to refill the quiz answers.
+5. Selecting `Done` in the modal will simply close the modal. Selecting `Redo?` in the modal will clear only the answers (leaving the name and photo information) and scroll back to the top of the page to allow you to refill the quiz answers.
